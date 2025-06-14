@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem auto;
+  list-style-type: none;
+  .nav__link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .nav__link-active {
+    color: rgb(206, 103, 44);
+    text-decoration: underline;
+  }
+}
