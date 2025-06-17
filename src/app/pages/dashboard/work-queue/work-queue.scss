@@ -1,0 +1,80 @@
+.work-queue {
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    .tab {
+      padding: 0.5rem 1rem;
+      background: #f3f4f6;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: 500;
+
+      &.active {
+        background: #3b82f6;
+        color: white;
+      }
+    }
+  }
+
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+
+    .initials-circle {
+      background-color: #e5e7eb;
+      border-radius: 50%;
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      text-align: center;
+      line-height: 2rem;
+      margin-right: 0.5rem;
+      font-weight: bold;
+    }
+
+    .badge {
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      &.new {
+        background: #fef3c7;
+        color: #92400e;
+      }
+
+      &.pending {
+        background: #e0f2fe;
+        color: #0369a1;
+      }
+
+      &.completed {
+        background: #d1fae5;
+        color: #065f46;
+      }
+    }
+
+    .sub {
+      color: #6b7280;
+      font-size: 0.75rem;
+    }
+  }
+}

@@ -5,12 +5,15 @@
   list-style-type: none;
   .nav__link {
     display: block;
-    color: #fff;
     text-decoration: none;
-    cursor: pointer;
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
   }
   .nav__link-active {
-    color: rgb(206, 103, 44);
-    text-decoration: underline;
+    background-color: #2f81f7;
+    color: white;
   }
 }
