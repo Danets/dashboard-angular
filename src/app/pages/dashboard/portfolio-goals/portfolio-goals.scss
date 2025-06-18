@@ -1,0 +1,25 @@
+.portfolio-goals {
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .goals-list {
+    display: flex;
+    gap: 2rem;
+
+    li {
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+
+      p {
+        color: #6b7280;
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

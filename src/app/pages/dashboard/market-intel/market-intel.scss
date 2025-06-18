@@ -1,0 +1,37 @@
+.market-intel {
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .intel-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    li {
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 0.875rem;
+        margin-top: 0.25rem;
+
+        &.trend.up {
+          color: #16a34a;
+        }
+
+        &.trend.down {
+          color: #dc2626;
+        }
+
+        &.trend.flat {
+          color: #6b7280;
+        }
+      }
+    }
+  }
+}
