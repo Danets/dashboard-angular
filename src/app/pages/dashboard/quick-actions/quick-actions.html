@@ -1,9 +1,8 @@
-<section class="quick-actions">
+<div class="quick-actions">
   <h2 class="section-title">Quick Actions</h2>
   <div class="actions-grid">
-    <button class="action-button">Create Account</button>
-    <button class="action-button">Create Submission</button>
-    <button class="action-button">Send Referral</button>
-    <button class="action-button">Upload Documents</button>
+    @for (action of data(); track action) {
+    <button class="action-button">{{ action }}</button>
+    }
   </div>
-</section>
+</div>

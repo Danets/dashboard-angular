@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { IAccounts } from '../../../core/models/models';
 
 @Component({
   selector: 'app-accounts',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './accounts.html',
   styleUrl: './accounts.scss',
 })
-export class Accounts {}
+export class Accounts {
+  data = input.required<IAccounts[]>();
+}

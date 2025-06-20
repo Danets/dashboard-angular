@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, input } from '@angular/core';
+import { IPortfolioGoals } from '../../../core/models/models';
 
 @Component({
   selector: 'app-portfolio-goals',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './portfolio-goals.html',
-  styleUrl: './portfolio-goals.scss'
+  styleUrl: './portfolio-goals.scss',
 })
 export class PortfolioGoals {
-
+  data = input.required<IPortfolioGoals[]>();
 }

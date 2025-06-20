@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { WorkQueue } from './work-queue/work-queue';
 import { Accounts } from './accounts/accounts';
 import { PortfolioGoals } from './portfolio-goals/portfolio-goals';
 import { QuickActions } from './quick-actions/quick-actions';
 import { MarketIntel } from './market-intel/market-intel';
+import { DashboardData } from './dashboard-data';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,4 +12,6 @@ import { MarketIntel } from './market-intel/market-intel';
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
-export class Dashboard {}
+export class Dashboard {
+  dataService = inject(DashboardData);
+}
