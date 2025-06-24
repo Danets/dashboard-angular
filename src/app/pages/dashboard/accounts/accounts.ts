@@ -8,5 +8,5 @@ import { IAccounts } from '../../../core/models/models';
   styleUrl: './accounts.scss',
 })
 export class Accounts {
-  data = input.required<IAccounts[]>();
+  readonly data = input.required<IAccounts[]>();
 }

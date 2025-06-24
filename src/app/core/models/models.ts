@@ -1,6 +1,7 @@
 export interface IWorkQueue {
   originator: string;
-  clientLine: string;
+  client: string;
+  line: string;
   type: string;
   status: string;
   created: string;

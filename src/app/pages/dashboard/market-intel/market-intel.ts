@@ -8,5 +8,5 @@ import { IMarketIntel } from '../../../core/models/models';
   styleUrl: './market-intel.scss',
 })
 export class MarketIntel {
-  data = input.required<IMarketIntel[]>();
+  readonly data = input.required<IMarketIntel[]>();
 }

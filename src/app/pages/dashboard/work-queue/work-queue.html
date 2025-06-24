@@ -1,30 +1,75 @@
 <section class="work-queue">
-  <h2 class="section-title">Work Queue</h2>
-  <div class="tabs">
-    <button class="tab active">Assigned to me (12)</button>
-    <button class="tab">Pending Review (8)</button>
-    <button class="tab">Referrals (3)</button>
+  <h2 class="work-queue__title">Work Queue</h2>
+  <div class="work-queue__tabs tabs">
+    <button class="tabs__tab tabs__tab-active">Assigned to me (12)</button>
+    <button class="tabs__tab">Pending Review (8)</button>
+    <button class="tabs__tab">Referrals (3)</button>
   </div>
-  <table class="custom-table">
-    <thead>
+  <table class="work-queue__table table">
+    <thead class="table__head">
       <tr>
         <th>Originator</th>
-        <th>Client / Line</th>
+        <th>Client/Line</th>
         <th>Type</th>
         <th>Status</th>
         <th>Created</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      @for (work of data(); track work.clientLine) {
+      @for (work of data(); track work.client) {
       <tr>
-        <td><span class="initials-circle">SM</span>{{work.originator}}</td>
         <td>
-          {{work.clientLine}} <br /><small class="sub">Cyber Liability</small>
+          <span class="table__avatar">{{getFirstLetter(work.originator)}}</span>
+          <p>{{work.originator}}</p>
+        </td>
+        <td>
+          {{work.client}}
+          <br />
+          <small class="sub">{{work.line}}</small>
         </td>
         <td>{{work.type}}</td>
-        <td><span class="badge new">{{work.status}}</span></td>
+        <td>
+          <div class="status">
+            <span
+              class="status__badge"
+              [class]="getClassName(work.status)"
+            ></span>
+            <span class="status__text"> {{work.status}} </span>
+          </div>
+        </td>
         <td>{{work.created}}</td>
+        <td class="cell-actions">
+          <button
+            class="action-btn"
+            title="Open details"
+            (click)="toggleMenu($event, work.client)"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="19" cy="12" r="1"></circle>
+              <circle cx="5" cy="12" r="1"></circle>
+            </svg>
+          </button>
+          @if(menuId === work.client) {
+          <div class="dropdown-menu">
+            <button>View</button>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+          }
+        </td>
+      </tr>
+      } @empty {
+      <tr>
+        <td>There are no items.</td>
       </tr>
       }
     </tbody>

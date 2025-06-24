@@ -9,5 +9,5 @@ import { IPortfolioGoals } from '../../../core/models/models';
   styleUrl: './portfolio-goals.scss',
 })
 export class PortfolioGoals {
-  data = input.required<IPortfolioGoals[]>();
+  readonly data = input.required<IPortfolioGoals[]>();
 }
