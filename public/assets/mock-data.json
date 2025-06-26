@@ -2,27 +2,27 @@
   "portfolioGoals": [
     {
       "title": "PORTFOLIO LOSS RATIO TARGET",
-      "value": "48.5%",
-      "description": "48.5% (GOOD)",
-      "status": "on-target"
+      "value": "48.2%",
+      "description": "-6.8% (GOOD)",
+      "status": "success"
     },
     {
       "title": "RENEWAL RETENTION",
       "value": "88%",
       "description": "ON TARGET",
-      "status": "on-target"
+      "status": "warning"
     },
     {
       "title": "NEW BUSINESS TARGET",
       "value": "$8.1M",
-      "description": "of $12M",
-      "status": "progress"
+      "description": "$12M",
+      "status": "info"
     },
     {
       "title": "ANNUAL GWP TARGET",
       "value": "$28.4M",
-      "description": "of $42M",
-      "status": "progress"
+      "description": "$42M",
+      "status": "info"
     }
   ],
   "quickActions": [

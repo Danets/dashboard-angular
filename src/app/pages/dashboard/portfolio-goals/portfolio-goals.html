@@ -1,9 +1,14 @@
-<div class="portfolio-goals">
+<div class="portfolio-card">
+  <h3>Portfolio goals</h3>
   @for (goal of data(); track goal.title) {
-  <div class="goal-card" [ngClass]="goal.status">
-    <h3>{{ goal.title }}</h3>
-    <div class="goal-value">{{ goal.value }}</div>
-    <p class="goal-description">{{ goal.description }}</p>
+  <div class="goal">
+    <div class="goal__title">{{ goal.title }}</div>
+    <div class="progress-bar">
+      <div class="progress-bar__fill fill" [class]="goal.status">
+        <div class="fill__value">{{ goal.value }}</div>
+      </div>
+    </div>
+    <div class="goal__desc">{{ goal.description }}</div>
   </div>
   }
 </div>
