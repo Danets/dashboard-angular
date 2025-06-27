@@ -1,36 +1,46 @@
-.market-intel {
-  .section-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+.market {
+  background-color: #1e293b;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  color: #e2e8f0;
+  height: calc(100% - 1rem);
+  &__title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
-  .intel-list {
+  &__list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    list-style: none;
 
-    li {
-      h3 {
-        font-size: 1rem;
-        font-weight: 600;
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      &:not(:last-child) {
+        border-bottom: 1px solid #b9bdc4;
       }
 
-      p {
+      &__badge {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        &.red {
+          background-color: #dc2626;
+        }
+        &.yellow {
+          background-color: #d9dc26;
+        }
+        &.blue {
+          background-color: #3826dc;
+        }
+      }
+
+      &__descr {
         font-size: 0.875rem;
-        margin-top: 0.25rem;
-
-        &.trend.up {
-          color: #16a34a;
-        }
-
-        &.trend.down {
-          color: #dc2626;
-        }
-
-        &.trend.flat {
-          color: #6b7280;
-        }
+        margin-bottom: 0.25rem;
       }
     }
   }

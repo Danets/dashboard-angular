@@ -1,4 +1,4 @@
-<article class="dashboard">
+<ng-container>
   <div class="dashboard__header">
     <app-work-queue [data]="dataService.workQueue()" />
     <app-portfolio-goals [data]="dataService.portfolioGoals()" />
@@ -8,4 +8,4 @@
     </div>
   </div>
   <app-accounts [data]="dataService.accounts()" />
-</article>
+</ng-container>
