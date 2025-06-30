@@ -20,8 +20,10 @@
       @for (work of data(); track work.client) {
       <tr>
         <td>
-          <span class="table__avatar">{{getFirstLetter(work.originator)}}</span>
-          <p>{{work.originator}}</p>
+          <div class="avatar">
+            <span class="avatar__img">{{getFirstLetter(work.originator)}}</span>
+            <p class="avatar__name">{{work.originator}}</p>
+          </div>
         </td>
         <td>
           {{work.client}}

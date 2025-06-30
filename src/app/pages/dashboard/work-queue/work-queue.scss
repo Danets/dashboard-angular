@@ -40,7 +40,7 @@
     border-collapse: collapse;
 
     &__head {
-      background-color: #ccc;
+      background-color: #786e6e;
       font-weight: 600;
       color: #fff;
     }
@@ -52,22 +52,31 @@
       text-align: left;
     }
 
-    tr:hover {
-      background-color: #ccc;
-      cursor: pointer;
+    .avatar {
+      display: flex;
+      align-items: center;
+      &__img {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+        line-height: 2rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+        background-color: #1f5fdf;
+        border-radius: 50%;
+        text-align: center;
+      }
+
+      &__name {
+        white-space: nowrap;
+      }
     }
 
-    &__avatar {
-      display: inline-block;
-      width: 2rem;
-      height: 2rem;
-      font-size: 1rem;
-      line-height: 2rem;
-      font-weight: bold;
-      margin-right: 0.5rem;
-      background-color: #1f5fdf;
-      border-radius: 50%;
-      text-align: center;
+    tr:hover,
+    tr:focus {
+      background-color: #786e6e;
+      cursor: pointer;
     }
 
     .status {

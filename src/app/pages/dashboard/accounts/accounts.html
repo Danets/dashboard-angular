@@ -1,14 +1,14 @@
 <section class="accounts">
-  <h2 class="section-title">My accounts</h2>
-  <div class="actions">
-    <input type="text" placeholder="Search" class="search-input" />
-    <button class="btn">Filter</button>
-    <button class="btn">Sort</button>
-    <button class="btn">Group</button>
-    <button class="btn primary">+ New</button>
+  <div class="accounts__actions actions">
+    <h2 class="actions__title">My accounts</h2>
+    <input type="text" placeholder="Search" class="actions__input" />
+    <button class="actions__btn">Filter</button>
+    <button class="actions__btn">Sort</button>
+    <button class="actions__btn">Group</button>
+    <button class="actions__btn primary">+ New</button>
   </div>
-  <table class="custom-table">
-    <thead>
+  <table class="accounts__table table">
+    <thead class="table__head">
       <tr>
         <th>Account Name / Type</th>
         <th>Line</th>
@@ -21,22 +21,77 @@
         <th>Status</th>
         <th>Triage</th>
         <th>Winability</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       @for (account of data(); track account.name) {
       <tr>
-        <td>{{ account.name }}</td>
+        <td>
+          <div class="account-name">
+            <p account-name__name>{{ account.name }}</p>
+            <p account-name__type>{{ account.type }}</p>
+          </div>
+        </td>
         <td>{{ account.line }}</td>
         <td>{{ account.broker }}</td>
         <td>{{ account.renewalDate }}</td>
-        <td>{{ account.premium }}</td>
+        <td>
+          <div class="account-premium">{{ account.premium }}</div>
+        </td>
         <td>{{ account.ratedPremium }}</td>
-        <td>{{ account.lossRatio }}</td>
-        <td>{{ account.appetite }}</td>
-        <td>{{ account.status }}</td>
-        <td>{{ account.triage }}</td>
-        <td>{{ account.winnability }}</td>
+        <td>
+          <div class="chip" [class]="getClassNameForChip(account.lossRatio)">
+            {{ account.lossRatio }}
+          </div>
+        </td>
+        <td>
+          <div class="chip">{{ account.appetite }}</div>
+        </td>
+        <td>
+          <div class="status">
+            <span
+              class="status__badge"
+              [class]="getClassNameForStatus(account.status)"
+            ></span>
+            <span class="status__text"> {{account.status}} </span>
+          </div>
+        </td>
+        <td>
+          <div class="chip triage">{{ account.triage }}</div>
+        </td>
+        <td>
+          <div style="white-space: nowrap" class="chip triage">
+            {{ account.winnability }}
+          </div>
+        </td>
+        <td class="cell-actions">
+          <button
+            class="action-btn"
+            title="Open details"
+            (click)="toggleMenu($event, account.name)"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="19" cy="12" r="1"></circle>
+              <circle cx="5" cy="12" r="1"></circle>
+            </svg>
+          </button>
+          @if(menuId === account.name) {
+          <div class="dropdown-menu">
+            <button>View</button>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+          }
+        </td>
       </tr>
       }
     </tbody>

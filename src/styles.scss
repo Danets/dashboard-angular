@@ -10,7 +10,9 @@ html {
   font-size: 16px;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
