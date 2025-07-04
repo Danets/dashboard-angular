@@ -72,7 +72,7 @@
       padding: 0.75rem;
       font-size: 0.875rem;
       text-align: left;
-      vertical-align: top;
+      // vertical-align: top;
     }
 
     .account-premium {
@@ -101,10 +101,35 @@
         background-color: #a31622;
         color: white;
       }
-      &.triage {
+      &.triage,
+      &.winnability {
         color: #2416a3;
-        background-color: #9ca8bd;
+        background-color: #5f91e9;
         border: 1px #2913ef solid;
+      }
+    }
+
+    .winnability {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 0.5rem;
+
+      &__dots {
+        display: flex;
+        gap: 0.25rem;
+      }
+
+      &__dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: #2416a3;
+      }
+
+      &__label {
+        font-size: 0.875rem;
+        white-space: nowrap;
       }
     }
 

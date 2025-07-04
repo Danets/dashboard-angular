@@ -11,6 +11,8 @@ export class Accounts {
   readonly data = input.required<IAccounts[]>();
   menuId: string | null = null;
 
+  winnabilityDots = [1, 2, 3, 4];
+
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent) {
     const target = event.target as HTMLElement;

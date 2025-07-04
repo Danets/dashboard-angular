@@ -14,6 +14,9 @@
       padding: 0.5rem;
       border-radius: 6px;
       border: none;
+      &:focus-visible {
+        outline: none;
+      }
     }
     .header__user {
       width: 40px;

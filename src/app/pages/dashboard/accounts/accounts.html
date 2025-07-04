@@ -61,10 +61,16 @@
           <div class="chip triage">{{ account.triage }}</div>
         </td>
         <td>
-          <div style="white-space: nowrap" class="chip triage">
-            {{ account.winnability }}
+          <div class="chip winnability">
+            <div class="winnability__dots">
+              @for (dot of winnabilityDots; track dot) {
+              <span class="winnability__dot"></span>
+              }
+            </div>
+            <span class="winnability__label">{{ account.winnability }}</span>
           </div>
         </td>
+
         <td class="cell-actions">
           <button
             class="action-btn"
