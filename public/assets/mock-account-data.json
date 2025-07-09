@@ -1,0 +1,98 @@
+{
+  "account": {
+    "name": "Maritime Logistics Corp",
+    "address": "425 Harbour Boulevard, Suite 300, Seattle, WA 98104",
+    "existingAccount": "54383",
+    "broker": "Marsh McLennan",
+    "underwriter": "Kate Johnson",
+    "needsAttention": [
+      {
+        "title": "Marine Survey Required",
+        "link": "Review details link"
+      },
+      {
+        "title": "Loss Control Complete",
+        "link": "View report"
+      },
+      {
+        "title": "Claims Review Required",
+        "link": "View claims"
+      }
+    ]
+  },
+  "metrics": {
+    "winnability": {
+      "score": "Very Strong",
+      "stars": 4,
+      "percent": 82,
+      "trend": [50, 55, 60, 70, 82],
+      "position": {
+        "marketAvg": 66,
+        "topCompetitor": 88
+      },
+      "increasing": [
+        { "title": "Brokers relationship", "value": "+28%" },
+        { "title": "Loss history", "value": "+22%" },
+        { "title": "Industry growth", "value": "+16%" },
+        { "title": "Multiline opportunity", "value": "+11%" }
+      ],
+      "decreasing": [
+        { "title": "Premium pricing", "value": "-24%" },
+        { "title": "Total exposure", "value": "-18%" },
+        { "title": "Loss ratio trend", "value": "-13%" },
+        { "title": "Market competition", "value": "-5%" }
+      ],
+      "recommendations": [
+        {
+          "title": "Offer 5% premium discount in exchange for 3-year commitment",
+          "description": "Historical win rate increases 2-5%...",
+          "action": "Apply"
+        },
+        {
+          "title": "Propose risk control services for cargo handling procedures",
+          "description": "Can potentially reduce loss ratio...",
+          "action": "Apply"
+        }
+      ]
+    }
+  },
+  "statusSteps": ["Submitted", "Review", "Quote", "Bind", "Issue", "Renew"],
+  "compliance": [
+    "KYC verification",
+    "Regulatory approval",
+    "Required Documentation",
+    "Financial Verification"
+  ],
+  "policies": [
+    {
+      "line": "Marine Cargo",
+      "etDate": "6/30/2026",
+      "status": "Active",
+      "premium": "$525,000"
+    },
+    {
+      "line": "General Liability",
+      "etDate": "6/30/2026",
+      "status": "Active",
+      "premium": "$175,000"
+    },
+    {
+      "line": "Workers Comp",
+      "etDate": "—",
+      "status": "Pending",
+      "premium": "$75,000"
+    },
+    {
+      "line": "Property",
+      "etDate": "—",
+      "status": "—",
+      "premium": "$84,829.83"
+    },
+    {
+      "line": "Umbrella",
+      "etDate": "15/03/2026",
+      "status": "—",
+      "premium": "$275,000"
+    }
+  ]
+}
