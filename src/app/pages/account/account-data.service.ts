@@ -1,10 +1,11 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { delay } from 'rxjs';
+import { Header } from '../../core/models/models';
 
 @Injectable({ providedIn: 'root' })
 export class AccountDataService {
-  readonly header = signal<any>(null);
+  readonly header = signal<Header | null>(null);
   readonly performanceMetrics = signal<any>(null);
   readonly policies = signal<any[]>([]);
   readonly status = signal<string[]>([]);
