@@ -1,0 +1,40 @@
+.policies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #1e293b;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-block-start: 0.5rem;
+
+  &__card {
+    background-color: #334155;
+    color: #f1f5f9;
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 160px;
+
+    gap: 0.25rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #487fcc;
+    }
+  }
+
+  &__type {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  &__premium,
+  &__et-date {
+    font-size: 13px;
+    color: #94a3b8;
+  }
+}

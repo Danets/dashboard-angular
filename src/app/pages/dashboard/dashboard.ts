@@ -4,7 +4,7 @@ import { Accounts } from './accounts/accounts';
 import { PortfolioGoals } from './portfolio-goals/portfolio-goals';
 import { QuickActions } from './quick-actions/quick-actions';
 import { MarketIntel } from './market-intel/market-intel';
-import { DashboardData } from './dashboard-data';
+import { DashboardDataService } from './dashboard-data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,5 +13,5 @@ import { DashboardData } from './dashboard-data';
   styleUrl: './dashboard.scss',
 })
 export class Dashboard {
-  dataService = inject(DashboardData);
+  dataService = inject(DashboardDataService);
 }

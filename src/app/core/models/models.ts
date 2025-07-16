@@ -44,7 +44,7 @@ export interface Header {
   needsAttention: string[];
 }
 
-export interface PerformanceMetrics {
+export interface Performance {
   winnability: string;
   lossRatio: string;
   premiumGrowth: string;

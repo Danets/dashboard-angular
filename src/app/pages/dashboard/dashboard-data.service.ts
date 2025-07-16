@@ -5,7 +5,7 @@ import { delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardData {
+export class DashboardDataService {
   readonly portfolioGoals = signal([]);
   readonly quickActions = signal([]);
   readonly marketIntel = signal([]);
