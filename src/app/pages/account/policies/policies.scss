@@ -5,7 +5,7 @@
   background-color: #1e293b;
   padding: 1rem;
   border-radius: 0.5rem;
-  margin-block-start: 0.5rem;
+  margin-block: 0.5rem;
 
   &__card {
     background-color: #334155;
@@ -22,6 +22,7 @@
 
     &:hover {
       background-color: #487fcc;
+      cursor: pointer;
     }
   }
 
