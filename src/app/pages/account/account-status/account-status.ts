@@ -23,7 +23,7 @@ import { Component, input } from '@angular/core';
       <div class="account-status__section">
         <div class="account-status__headline">
           <h2 class="account-status__title">Compliance & Documentation</h2>
-          <a class="account-status__link">See history →</a>
+          <a class="account-status__link" href="#">See history →</a>
         </div>
 
         <ul class="account-status__list">

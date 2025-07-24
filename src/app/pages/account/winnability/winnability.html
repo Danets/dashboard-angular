@@ -1,0 +1,166 @@
+<h2 class="winnability__title">Winnability</h2>
+
+@if (winnability()) {
+<div class="winnability">
+  <div class="winnability__grid">
+    <!-- SideBar -->
+    <div class="winnability__sidebar">
+      <h4 class="winnability__sidebar-title">Winnability Overview</h4>
+      <ul class="winnability__sidebar-list">
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link" href="#">Overall Score</a>
+        </li>
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link" href="#">Historical Trend</a>
+        </li>
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link" href="#">Position</a>
+        </li>
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link" href="#">Increasing Factors</a>
+        </li>
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link" href="#">Decreasing Factors</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Overall Score Card -->
+    <div class="winnability__card score">
+      <h4 class="winnability__card-title">Overall Score</h4>
+      <div class="score__content">
+        <div class="score__value">{{ winnability().overallScore }}%</div>
+        <div class="score__chip">
+          <div class="score__dots">
+            @for (dot of winnabilityDots; track dot) {
+            <span class="score__dot"></span>
+            }
+          </div>
+          <span class="score__label">{{ winnability().tag }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Historical Trend -->
+    <div class="winnability__card trend">
+      <h4 class="winnability__card-title">Historical Trend</h4>
+      <div class="trend__chart">
+        <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+          <!-- <polyline
+            [attr.points]="
+              winnability().history
+                .map((v, i) => i * 25 + ',' + (40 - (v / 100) * 40))
+                .join(' ')
+            "
+            fill="none"
+            stroke="#38bdf8"
+            stroke-width="2"
+          /> -->
+        </svg>
+      </div>
+    </div>
+
+    <!-- Position -->
+    <div class="winnability__card position">
+      <h4 class="winnability__card-title">Position</h4>
+      <div class="position__bar">
+        <div class="position__bar-track">
+          <div
+            class="position__bar-fill"
+            [style.width.%]="winnability().position.marketAvg"
+          ></div>
+        </div>
+        <h5 class="position__bar-label">
+          Market Avg: {{ winnability().position.marketAvg }}%
+        </h5>
+      </div>
+
+      <div class="position__bar">
+        <div class="position__bar-track">
+          <div
+            class="position__bar-fill"
+            [style.width.%]="winnability().position.score"
+          ></div>
+        </div>
+        <h5 class="position__bar-label">
+          Your score: {{ winnability().position.score }}%
+        </h5>
+      </div>
+
+      <div class="position__bar">
+        <div class="position__bar-track">
+          <div
+            class="position__bar-fill"
+            [style.width.%]="winnability().position.topCompetitor"
+          ></div>
+        </div>
+        <h5 class="position__bar-label">
+          Top Competitor: {{ winnability().position.topCompetitor }}%
+        </h5>
+      </div>
+    </div>
+
+    <div class="subgrid">
+      <!-- Increasing -->
+      <div class="winnability__card increasing winnability__card--increasing">
+        <h4 class="winnability__card-title">Increasing Winnability</h4>
+        <div
+          class="winnability__factor"
+          *ngFor="let item of winnability().increasing; index as i"
+        >
+          <div class="winnability__factor-index">{{ i + 1 }}</div>
+          <div class="winnability__factor-label">{{ item.label }}</div>
+          <div class="winnability__progress">
+            <div
+              class="winnability__progress-bar winnability__progress-bar--green"
+              [style.width.%]="item.value"
+            ></div>
+          </div>
+          <div class="winnability__factor-value">+{{ item.value }}%</div>
+        </div>
+      </div>
+
+      <!-- Decreasing -->
+      <div class="winnability__card decreasing winnability__card--decreasing">
+        <h4 class="winnability__card-title">Decreasing Winnability</h4>
+        <div
+          class="winnability__factor"
+          *ngFor="let item of winnability().decreasing; index as i"
+        >
+          <div class="winnability__factor-index">{{ i + 1 }}</div>
+          <div class="winnability__factor-label">{{ item.label }}</div>
+          <div class="winnability__progress">
+            <div
+              class="winnability__progress-bar winnability__progress-bar--red"
+              [style.width.%]="item.value"
+            ></div>
+          </div>
+          <div class="winnability__factor-value">{{ item.value }}%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="winnability__recommendations recommendations">
+      <h3 class="winnability__sidebar-title">Recommendations</h3>
+      <ul class="winnability__sidebar-list">
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link">Overall Score</a>
+        </li>
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link">Historical Trend</a>
+        </li>
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link">Position</a>
+        </li>
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link">Increasing Factors</a>
+        </li>
+        <li class="winnability__sidebar-item">
+          <a class="winnability__sidebar-link">Decreasing Factors</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+}

@@ -1,7 +1,12 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { delay } from 'rxjs';
-import { Header, Performance, Policy } from '../../core/models/models';
+import {
+  Header,
+  IWinnability,
+  Performance,
+  Policy,
+} from '../../core/models/models';
 
 @Injectable({ providedIn: 'root' })
 export class AccountDataService {
@@ -10,7 +15,7 @@ export class AccountDataService {
   readonly policies = signal<Policy[]>([]);
   readonly status = signal<string[]>([]);
   readonly compliance = signal<string[]>([]);
-  readonly winnability = signal<any>(null);
+  readonly winnability = signal<IWinnability | null>(null);
 
   constructor(private readonly http: HttpClient) {
     this.loadMockData();

@@ -4,10 +4,17 @@ import { AccountDataService } from './account-data.service';
 import { PerformanceMetrics } from './performance-metrics/performance-metrics';
 import { Policies } from './policies/policies';
 import { AccountStatus } from './account-status/account-status';
+import { Winnability } from './winnability/winnability';
 
 @Component({
   selector: 'app-account',
-  imports: [AccountHeader, PerformanceMetrics, Policies, AccountStatus],
+  imports: [
+    AccountHeader,
+    PerformanceMetrics,
+    Policies,
+    AccountStatus,
+    Winnability,
+  ],
   template: `
     <div class="account">
       <app-account-header [header]="accountData.header()!"></app-account-header>
@@ -20,6 +27,9 @@ import { AccountStatus } from './account-status/account-status';
         [compliance]="accountData.compliance()!"
       >
       </app-account-status>
+      <app-winnability
+        [winnability]="accountData.winnability()!"
+      ></app-winnability>
     </div>
   `,
   styleUrl: './account.scss',

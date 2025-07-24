@@ -1,8 +1,14 @@
 .performance-metrics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
   gap: 1rem;
   margin-block: 0.5rem;
+
+  @media (min-width: 1024px) {
+    & {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+  }
 
   &__card {
     background-color: #1e293b;
@@ -52,7 +58,12 @@
     font-size: 14px;
     color: #f1f5f9;
     width: 48%;
-    white-space: nowrap;
+  }
+
+  @media (min-width: 1440px) {
+    &__bar-label {
+      white-space: nowrap;
+    }
   }
 
   &__bar-track {

@@ -62,7 +62,7 @@ export interface Policy {
   etDate: string;
 }
 
-export interface Winnability {
+export interface IWinnability {
   overallScore: number;
   tag: string;
   history: number[];
