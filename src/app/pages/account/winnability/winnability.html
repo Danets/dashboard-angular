@@ -1,6 +1,6 @@
+@if (winnability()) {
 <h2 class="winnability__title">Winnability</h2>
 
-@if (winnability()) {
 <div class="winnability">
   <div class="winnability__grid">
     <!-- SideBar -->
@@ -102,12 +102,11 @@
 
     <div class="subgrid">
       <!-- Increasing -->
-      <div class="winnability__card increasing winnability__card--increasing">
+      <div class="winnability__card increasing">
         <h4 class="winnability__card-title">Increasing Winnability</h4>
-        <div
-          class="winnability__factor"
-          *ngFor="let item of winnability().increasing; index as i"
-        >
+        @for (item of winnability().increasing; track item.label; let i =
+        $index) {
+        <div class="winnability__factor">
           <div class="winnability__factor-index">{{ i + 1 }}</div>
           <div class="winnability__factor-label">{{ item.label }}</div>
           <div class="winnability__progress">
@@ -118,15 +117,15 @@
           </div>
           <div class="winnability__factor-value">+{{ item.value }}%</div>
         </div>
+        }
       </div>
 
       <!-- Decreasing -->
-      <div class="winnability__card decreasing winnability__card--decreasing">
+      <div class="winnability__card decreasing">
         <h4 class="winnability__card-title">Decreasing Winnability</h4>
-        <div
-          class="winnability__factor"
-          *ngFor="let item of winnability().decreasing; index as i"
-        >
+        @for (item of winnability().decreasing; track item.label; let i =
+        $index) {
+        <div class="winnability__factor">
           <div class="winnability__factor-index">{{ i + 1 }}</div>
           <div class="winnability__factor-label">{{ item.label }}</div>
           <div class="winnability__progress">
@@ -137,29 +136,39 @@
           </div>
           <div class="winnability__factor-value">{{ item.value }}%</div>
         </div>
+        }
       </div>
     </div>
 
     <!-- Recommendations -->
     <div class="winnability__recommendations recommendations">
-      <h3 class="winnability__sidebar-title">Recommendations</h3>
-      <ul class="winnability__sidebar-list">
-        <li class="winnability__sidebar-item">
-          <a class="winnability__sidebar-link">Overall Score</a>
-        </li>
-        <li class="winnability__sidebar-item">
-          <a class="winnability__sidebar-link">Historical Trend</a>
-        </li>
-        <li class="winnability__sidebar-item">
-          <a class="winnability__sidebar-link">Position</a>
-        </li>
-        <li class="winnability__sidebar-item">
-          <a class="winnability__sidebar-link">Increasing Factors</a>
-        </li>
-        <li class="winnability__sidebar-item">
-          <a class="winnability__sidebar-link">Decreasing Factors</a>
-        </li>
-      </ul>
+      <h3 class="winnability__card-title">Recommendations</h3>
+      <div class="recommendations__list">
+        <div class="recommendations__item">
+          <div class="recommendations__content">
+            <h3>Overall Score</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              explicabo eum eligendi dolorum, sint architecto, fugiat et illum
+              harum reiciendis recusandae. Mollitia sint sit dicta, facere
+              laudantium quibusdam at vitae!
+            </p>
+          </div>
+          <button class="recommendations__btn">Apply</button>
+        </div>
+        <div class="recommendations__item">
+          <div class="recommendations__content">
+            <h3>Historical Trend</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+              explicabo eum eligendi dolorum, sint architecto, fugiat et illum
+              harum reiciendis recusandae. Mollitia sint sit dicta, facere
+              laudantium quibusdam at vitae!
+            </p>
+          </div>
+          <button class="recommendations__btn">Apply</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

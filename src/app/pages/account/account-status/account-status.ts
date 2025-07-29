@@ -7,6 +7,7 @@ import { Component, input } from '@angular/core';
   template: `
     <section class="account-status">
       <!-- Status Steps -->
+      @if (status().length) {
       <div class="account-status__section">
         <h2 class="account-status__title">Account Status</h2>
 
@@ -18,8 +19,9 @@ import { Component, input } from '@angular/core';
           }
         </ul>
       </div>
-
+      }
       <!-- Compliance -->
+      @if (compliance().length) {
       <div class="account-status__section">
         <div class="account-status__headline">
           <h2 class="account-status__title">Compliance & Documentation</h2>
@@ -32,6 +34,7 @@ import { Component, input } from '@angular/core';
           }
         </ul>
       </div>
+      }
     </section>
   `,
 })

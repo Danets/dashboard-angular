@@ -1,10 +1,9 @@
 import { Component, input } from '@angular/core';
 import { IWinnability } from '../../../core/models/models';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-winnability',
-  imports: [CommonModule],
+  imports: [],
   styleUrl: './winnability.scss',
   templateUrl: './winnability.html',
 })

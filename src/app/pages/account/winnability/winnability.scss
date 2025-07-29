@@ -19,7 +19,8 @@
   }
 
   &__card,
-  &__sidebar {
+  &__sidebar,
+  &__recommendations {
     background: #0f172a;
     border-radius: 8px;
     padding: 1rem;
@@ -28,7 +29,7 @@
     gap: 0.5rem;
 
     &-title {
-      font-size: 14px;
+      font-size: 1rem;
       font-weight: 600;
       color: #94a3b8;
       margin-bottom: 0.5rem;
@@ -133,17 +134,11 @@
     gap: 1rem;
   }
 
-  .recommendations {
-    grid-area: recommendations;
-    grid-column: 2 / span 3;
-  }
-
   &__factor {
     display: grid;
-    grid-template-columns: 20px 1fr 80px 50px;
+    grid-template-columns: 20px 1fr 180px 50px;
     align-items: center;
-    gap: 8px;
-    font-size: 13px;
+    gap: 0.5rem;
 
     &-index {
       color: #94a3b8;
@@ -159,8 +154,8 @@
 
   &__progress {
     background: #334155;
-    border-radius: 4px;
-    height: 6px;
+    border-radius: 1rem;
+    height: 1rem;
     overflow: hidden;
 
     &-bar {
@@ -170,6 +165,46 @@
       }
       &--red {
         background: #ef4444;
+      }
+    }
+  }
+
+  .recommendations {
+    grid-area: recommendations;
+    grid-column: 2 / span 3;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__content {
+      width: 70%;
+    }
+
+    &__btn {
+      padding: 0.5rem 1rem;
+      border: 0;
+      background-color: #22c55e;
+      border-radius: 1rem;
+      font-size: 1rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      cursor: pointer;
+      transform: scale3d(1, 1, 1);
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+      &:hover,
+      &:focus {
+        background-color: #16a34a;
+        transform: scale3d(2, 2, 2);
       }
     }
   }

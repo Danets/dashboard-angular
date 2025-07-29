@@ -5,8 +5,9 @@ import { Policy } from '../../../core/models/models';
   selector: 'app-policies',
   styleUrl: './policies.scss',
   template: `
-    <h2 class="policies__headline">Policies</h2>
     @if (policies().length) {
+    <h2 class="policies__headline">Policies</h2>
+
     <section class="policies">
       @for (policy of policies(); track policy.type) {
       <div class="policies__card">
