@@ -4,18 +4,21 @@
   padding: 1.5rem;
   color: #f1f5f9;
 
-  &__grid {
-    display: grid;
-    grid-template-columns: minmax(100px, 1fr) repeat(
-        auto-fit,
-        minmax(150px, 1fr)
-      );
-    grid-template-rows: auto;
-    grid-template-areas:
-      "sidebar score trend position"
-      "sidebar subgrid subgrid subgrid"
-      "sidebar recommendations recommendations recommendations";
-    gap: 1rem;
+  @media (min-width: 768px) {
+    &__grid {
+      display: grid;
+      grid-template-columns: minmax(100px, 1fr) repeat(
+          auto-fit,
+          minmax(150px, 1fr)
+        );
+      grid-template-rows: auto;
+
+      grid-template-areas:
+        "sidebar score trend position"
+        "sidebar subgrid subgrid subgrid"
+        "sidebar recommendations recommendations recommendations";
+      gap: 1rem;
+    }
   }
 
   &__card,
@@ -83,7 +86,9 @@
 
     &__label {
       font-size: 0.875rem;
-      white-space: nowrap;
+      @media (min-width: 1440px) {
+        white-space: nowrap;
+      }
     }
   }
 
@@ -130,16 +135,20 @@
   .subgrid {
     grid-area: subgrid;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    gap: 0.5rem;
   }
 
   &__factor {
-    display: grid;
-    grid-template-columns: 20px 1fr 180px 50px;
-    align-items: center;
-    gap: 0.5rem;
-
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 20px 1fr 100px 50px;
+      align-items: center;
+      gap: 0.5rem;
+    }
     &-index {
       color: #94a3b8;
     }
